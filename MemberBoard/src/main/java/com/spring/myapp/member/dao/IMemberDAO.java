@@ -1,5 +1,8 @@
 package com.spring.myapp.member.dao;
 
-public interface IMemberDAO {
+import com.spring.myapp.member.vo.MemberVO;
 
+public interface IMemberDAO {
+	
+	void insertMember(MemberVO member);
 }

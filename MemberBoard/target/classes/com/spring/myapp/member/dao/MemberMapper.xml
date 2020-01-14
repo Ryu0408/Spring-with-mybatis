@@ -3,4 +3,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="com.spring.myapp.member.dao.IMemberDAO">
 
+<insert id="insertMember" parameterType="com.spring.myapp.member.vo.MemberVO">
+INSERT INTO member VALUES(#{id}, #{pw}, #{name}, #{email}, #{address}, SYSDATE)
+</insert>
 </mapper>
