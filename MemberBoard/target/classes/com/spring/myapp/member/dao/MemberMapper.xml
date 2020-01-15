@@ -4,6 +4,10 @@
 <mapper namespace="com.spring.myapp.member.dao.IMemberDAO">
 
 <insert id="insertMember" parameterType="com.spring.myapp.member.vo.MemberVO">
-INSERT INTO member VALUES(#{id}, #{pw}, #{name}, #{email}, #{address}, SYSDATE)
+	INSERT INTO member VALUES(#{id}, #{pw}, #{name}, #{email}, #{address}, SYSDATE)
 </insert>
+
+<select id="selectAllMembers" resultType="com.spring.myapp.member.vo.MemberVO">
+	SELECT * FROM member
+</select>
 </mapper>
