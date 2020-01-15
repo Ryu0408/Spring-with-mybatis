@@ -2,6 +2,8 @@ package com.spring.myapp.member.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,10 +51,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="member/login", method=RequestMethod.POST)
-	public String memberLogin(String id, String pw , Model model) {
+	public String memberLogin(String id, String pw , 
+							HttpSession session, Model model) {
 		MemberVO check = memberService.checkMemberId(id);
 		if(check != null) {
 			if(pw.equals(check.getPw())) {
+				session.setAttribute("id", check.getId());
+				session.setAttribute("name", check.getName());
 				model.addAttribute("id", check.getId());
 				model.addAttribute("name",check.getName());
 				return "member/login_welcome";
@@ -65,5 +70,11 @@ public class MemberController {
 			model.addAttribute("id_fail", id);
 			return "member/login_fail_id";
 		}
+	}
+	
+	@RequestMapping(value="member/logout", method=RequestMethod.GET)
+	public String logout(HttpSession session, Model model) {
+		session.invalidate();
+		return "redirect:../";
 	}
 }

@@ -9,8 +9,7 @@
 <body>
 <h1>스프링 회원게시판 프로젝트 메인페이지</h1>
 </body>
-<a href="member/join">회원가입</a><br>
+<a href="#">회원탈퇴</a><br>
 <a href="member/list">회원목록</a><br>
-<a href="member/login">로그인</a>
-
+<a href="member/logout">로그아웃</a>
 </html>
