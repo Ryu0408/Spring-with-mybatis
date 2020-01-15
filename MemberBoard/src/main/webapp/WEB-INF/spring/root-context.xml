@@ -23,7 +23,7 @@
 		<!-- xml파일 경로를 직접 잡아야 하기때문에 /로 구분합니다. -->
 		<property name="mapperLocations" 
 		value="classpath:com/spring/myapp/**/*.xml"/> 
-	</bean>
+	</bean>  
 	
 	<!-- mybatis 구현 xml파일을 스캔할 수 있도록 경로 지정 --> 
 	<!-- 마이바티스 스캔, 컴포넌트 스캔은 패키지로 사용하기 떄문에 .으로 구문합니다. -->
