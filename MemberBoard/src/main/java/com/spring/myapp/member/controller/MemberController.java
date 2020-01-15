@@ -72,9 +72,37 @@ public class MemberController {
 		}
 	}
 	
-	@RequestMapping(value="member/logout", method=RequestMethod.GET)
+	@RequestMapping(value="member/logout")
 	public String logout(HttpSession session, Model model) {
 		session.invalidate();
 		return "redirect:../";
+	}
+	
+	@RequestMapping(value="member/delete", method=RequestMethod.GET)
+	public String memberDelete(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		model.addAttribute("id",id);
+		return "member/delete_form";
+	}
+	
+	@RequestMapping(value="member/delete", method=RequestMethod.POST)
+	public String memberDelete(String id, String pw, 
+						HttpSession session, Model model) {
+		MemberVO check = memberService.checkMemberId(id);
+		if(!pw.equals(check.getPw())) {
+			session.invalidate();
+			return "member/delete_fail";
+		}
+		memberService.deleteMember(id, pw);
+		session.invalidate();
+		return "member/delete_ok";
+	}
+	
+	@RequestMapping(value="member/update", method=RequestMethod.GET)
+	public String memberUpdate(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		MemberVO member = memberService.checkMemberId(id);
+		model.addAttribute("member", member);
+		return "member/update_form";
 	}
 }

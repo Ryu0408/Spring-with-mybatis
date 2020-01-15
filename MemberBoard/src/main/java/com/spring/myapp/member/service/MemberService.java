@@ -28,4 +28,16 @@ public class MemberService implements IMemberService {
 	public MemberVO checkMemberId(String id) {
 		return memberDAO.checkMemberId(id);
 	}
+
+	@Override
+	public void deleteMember(String id, String pw) {
+		memberDAO.deleteMember(id, pw);
+	}
+
+	@Override
+	public void updateMember(MemberVO member) {
+		memberDAO.updateMember(member);
+	}
+
+
 }

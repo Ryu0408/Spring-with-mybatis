@@ -12,5 +12,9 @@ public interface IMemberService {
 	void insertMember(MemberVO member);
 	List<MemberVO> selectAllMembers();
 	MemberVO checkMemberId(@Param("id") String id);
+	void deleteMember(@Param("id") String id, @Param("pw") String pw);
+	void updateMember(MemberVO member);
+
+
 
 }
