@@ -1,9 +1,9 @@
-package com.spirng.myapp.board.service;
+package com.spring.myapp.board.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spirng.myapp.board.dao.IBoardDAO;
+import com.spring.myapp.board.dao.IBoardDAO;
 
 @Service
 public class BoardService implements IBoardService {

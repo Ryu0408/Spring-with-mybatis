@@ -1,4 +1,4 @@
-package com.spirng.myapp.board.service;
+package com.spring.myapp.board.service;
 
 import org.apache.ibatis.annotations.Param;
 

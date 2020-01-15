@@ -1,4 +1,4 @@
-package com.spirng.myapp.board.vo;
+package com.spring.myapp.board.vo;
 
 import java.sql.Timestamp;
 

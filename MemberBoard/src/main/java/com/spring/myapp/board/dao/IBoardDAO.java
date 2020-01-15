@@ -1,4 +1,4 @@
-package com.spirng.myapp.board.dao;
+package com.spring.myapp.board.dao;
 
 import org.apache.ibatis.annotations.Param;
 
