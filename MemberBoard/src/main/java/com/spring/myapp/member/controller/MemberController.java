@@ -105,4 +105,10 @@ public class MemberController {
 		model.addAttribute("member", member);
 		return "member/update_form";
 	}
+	
+	@RequestMapping(value="member/update", method=RequestMethod.POST)
+	public String memberDelete(MemberVO member, Model model) {
+		memberService.updateMember(member);
+		return "member/update_ok";
+	}
 }
