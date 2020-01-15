@@ -42,4 +42,28 @@ public class MemberController {
 		model.addAttribute("members", members);
 		return "member/member_list";
 	}
+	
+	@RequestMapping(value="member/login", method=RequestMethod.GET)
+	public String memberLogin(Model model) {
+		return "member/login_form";
+	}
+	
+	@RequestMapping(value="member/login", method=RequestMethod.POST)
+	public String memberLogin(String id, String pw , Model model) {
+		MemberVO check = memberService.checkMemberId(id);
+		if(check != null) {
+			if(pw.equals(check.getPw())) {
+				model.addAttribute("id", check.getId());
+				model.addAttribute("name",check.getName());
+				return "member/login_welcome";
+			}
+			else {
+				model.addAttribute("id_fail", id);
+				return "member/login_fail_pw";
+			}
+		}else {
+			model.addAttribute("id_fail", id);
+			return "member/login_fail_id";
+		}
+	}
 }

@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>스프링 회원게시판 프로젝트 메인페이지</h1>
+	<h1>${id_fail }은 존재하지 않는 아이디입니다. 아이디를 확인해주세요</h1><br>
+	<a href="../">메인페이지로</a>
 </body>
-<a href="member/join">회원가입</a><br>
-<a href="member/list">회원목록</a><br>
-<a href="member/login">로그인</a>
-
 </html>
