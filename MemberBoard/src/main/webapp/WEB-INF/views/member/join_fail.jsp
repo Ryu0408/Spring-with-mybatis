@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>스프링 회원게시판 프로젝트 메인페이지</h1>
+	<h1>${id }는 이미 가입된 아이디입니다.</h1><br>
+	<p>다른 아이디로 가입해주세요</p>
+	<a href="../">홈으로가기</a>
 </body>
-<a href="member/join">회원가입</a><br>
-<a href="member/list">회원목록</a>
 </html>

@@ -24,8 +24,16 @@ public class MemberController {
 	
 	@RequestMapping(value="member/join", method=RequestMethod.POST)
 	public String memberJoin(MemberVO member,Model model) {
-		memberService.insertMember(member);
-		return "redirect:../";
+		MemberVO check = memberService.checkMemberId(member.getId());
+		if(check == null) {
+			memberService.insertMember(member);
+			model.addAttribute("id", member.getId());
+			model.addAttribute("name",member.getName());
+			return "member/join_ok";
+		}else {
+			model.addAttribute("id",member.getId());
+			return "member/join_fail";
+		}
 	}
 	
 	@RequestMapping(value="member/list", method=RequestMethod.GET)

@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>스프링 회원게시판 프로젝트 메인페이지</h1>
+	<h1>${name }(${id })님 가입을 축하합니다!</h1><br>
+	<a href="../">메인으로 돌아가기.</a>
 </body>
-<a href="member/join">회원가입</a><br>
-<a href="member/list">회원목록</a>
 </html>

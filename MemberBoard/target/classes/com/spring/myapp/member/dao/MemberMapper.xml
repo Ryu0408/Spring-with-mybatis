@@ -10,4 +10,9 @@
 <select id="selectAllMembers" resultType="com.spring.myapp.member.vo.MemberVO">
 	SELECT * FROM member
 </select>
+
+<select id = "checkMemberId" parameterType="string"
+	resultType="com.spring.myapp.member.vo.MemberVO">
+	select * from member WHERE id=#{id}
+	</select>
 </mapper>

@@ -23,4 +23,9 @@ public class MemberService implements IMemberService {
 	public List<MemberVO> selectAllMembers() {
 		return memberDAO.selectAllMembers();
 	}
+
+	@Override
+	public MemberVO checkMemberId(String id) {
+		return memberDAO.checkMemberId(id);
+	}
 }
