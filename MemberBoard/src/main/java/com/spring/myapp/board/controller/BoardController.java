@@ -19,14 +19,19 @@ public class BoardController {
 	
 	@RequestMapping(value="board/write", method=RequestMethod.GET)
 	public String writeBoard(HttpSession session, Model model) {
-		System.out.println("되나?");
 		if(session.getAttribute("id")==null) {
-			return "redirect../";
+			return "redirect:../";
 		}
 		String id = (String)session.getAttribute("id");
 		String name = (String)session.getAttribute("name");
 		model.addAttribute("name",name);
 		model.addAttribute("id",id);
 		return "board/board_form";
+	}
+	
+	@RequestMapping(value="board/write", method=RequestMethod.POST)
+	public String writeBoard(String name, String title, String content, Model model) {
+		boardService.writeBoard(name, title, content);
+		return "redirect:../";
 	}
 }

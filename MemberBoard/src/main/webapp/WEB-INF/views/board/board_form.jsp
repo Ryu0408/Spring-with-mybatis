@@ -11,7 +11,7 @@
 	<hr/>
 	<form action = "write" method = "post">
 		<input type = "hidden" name="name" value="${name }">
-		<table width = "500x" border="1">
+		<table width = "500px" border="1">
 			<tr>
 				<td>작성자</td>
 				<td>${name}(${id}) </td>
@@ -25,12 +25,11 @@
 			<tr>
 				<td>글 내용</td>
 				<td>
-					<textarea rows="content" rows="10" cols="50"></textarea>
+					<textarea name="content" rows="10" cols="50"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-				<td>
 					<input type = "submit" value="완료">
 					<a href = "main">게시글 목록으로</a>
 				</td>
