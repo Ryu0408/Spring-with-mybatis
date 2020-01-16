@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>글목록</h1>
+<h1>게시물 목록</h1>
 	<table border="1">
 		<tr>
 			<th>글번호</th>
@@ -21,7 +21,7 @@
 		<tr>
 			<td>${board.boardnum }</td>
 			<td>${board.name }</td>
-			<td>${board.title }</td>
+			<td><a href="detail/${board.boardnum}">${board.title }</a></td>
 			<td>${board.bdate }</td>
 			<td>${board.hit }</td>
 		</tr>

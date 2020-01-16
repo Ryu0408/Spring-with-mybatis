@@ -10,5 +10,6 @@ public interface IBoardService {
 
 	void writeBoard(String name, String title,  String content);
 	List<BoardVO> getBoardList();
+	BoardVO getBoardContent(int boardnum);
 
 }

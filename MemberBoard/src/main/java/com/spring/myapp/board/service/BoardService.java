@@ -24,4 +24,9 @@ public class BoardService implements IBoardService {
 	public List<BoardVO> getBoardList() {
 		return boardDAO.getBoardList();
 	}
+
+	@Override
+	public BoardVO getBoardContent(int boardnum) {
+		return boardDAO.getBoardContent(boardnum);
+	}
 }

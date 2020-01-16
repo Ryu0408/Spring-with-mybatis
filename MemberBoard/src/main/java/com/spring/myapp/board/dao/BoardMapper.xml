@@ -11,4 +11,7 @@
 	SELECT * FROM board ORDER BY boardnum DESC
 </select>
 
+<select id="getBoardContent" resultType="com.spring.myapp.board.vo.BoardVO">
+	SELECT * FROM board WHERE boardnum = #{boardnum}
+</select>
 </mapper>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -46,5 +47,18 @@ public class BoardController {
 		List<BoardVO> boards = boardService.getBoardList();
 		model.addAttribute("boards", boards);
 		return "board/board_list";
+	}
+	
+	
+	@RequestMapping(value="board/detail/{boardnum}")
+	public String showBoardDetail(
+			@PathVariable int boardnum,
+			HttpSession session, Model model) {
+		if(session.getAttribute("id")==null) {
+			return "redirect:../";
+		}
+		BoardVO detail = boardService.getBoardContent(boardnum);
+		model.addAttribute("detail", detail);
+		return "board/board_detail";
 	}
 }
