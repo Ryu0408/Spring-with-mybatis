@@ -31,7 +31,7 @@
 			<tr>
 				<td colspan="2">
 					<input type = "submit" value="완료">
-					<a href = "main">게시글 목록으로</a>
+					<a href = "list">게시글 목록으로</a>
 				</td>
 			</tr>
 		</table>

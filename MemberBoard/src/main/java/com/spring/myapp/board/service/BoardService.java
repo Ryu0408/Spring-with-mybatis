@@ -29,4 +29,12 @@ public class BoardService implements IBoardService {
 	public BoardVO getBoardContent(int boardnum) {
 		return boardDAO.getBoardContent(boardnum);
 	}
+
+	@Override
+	public void deleteBoard(int boardnum) {
+		boardDAO.deleteBoard(boardnum);
+
+	}
+	
+	
 }

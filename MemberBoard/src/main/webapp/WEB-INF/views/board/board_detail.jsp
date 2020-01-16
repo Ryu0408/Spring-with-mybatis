@@ -32,7 +32,9 @@
 		
 		<tr>
 			<td colspan = "4">
-				<a href = "../list">[목록으로]</a></td>
+				<a href = "../list">[목록으로]</a>
+				<a href = "../delete/${detail.boardnum }">[삭제하기]</a>
+			</td>
 		</tr>
 	</table>
 </body>

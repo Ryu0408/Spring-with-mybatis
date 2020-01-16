@@ -13,4 +13,5 @@ public interface IBoardDAO {
 					@Param("content") String content);
 	List<BoardVO> getBoardList();
 	BoardVO getBoardContent(@Param("boardnum") int boardnum);
+	void deleteBoard(@Param("boardnum") int boardnum);
 }

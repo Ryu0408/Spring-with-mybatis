@@ -14,4 +14,8 @@
 <select id="getBoardContent" resultType="com.spring.myapp.board.vo.BoardVO">
 	SELECT * FROM board WHERE boardnum = #{boardnum}
 </select>
+
+<delete id="deleteBoard" parameterType="int">
+	delete from board where boardnum = #{boardnum}
+</delete>
 </mapper>

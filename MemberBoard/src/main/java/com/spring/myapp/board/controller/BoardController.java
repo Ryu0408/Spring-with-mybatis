@@ -58,7 +58,26 @@ public class BoardController {
 			return "redirect:../";
 		}
 		BoardVO detail = boardService.getBoardContent(boardnum);
+		if(detail == null) {
+			return "redirect:../list";
+		}
 		model.addAttribute("detail", detail);
 		return "board/board_detail";
+	}
+
+	@RequestMapping(value="board/delete/{boardnum}")
+	public String boardDelete(
+			@PathVariable int boardnum,
+			HttpSession session, Model model) {
+		if(session.getAttribute("id")==null) {
+			return "redirect:../";
+		}
+		BoardVO board = boardService.getBoardContent(boardnum);
+		String uname = (String)session.getAttribute("name");
+		if(uname.contentEquals(board.getName())) {
+			boardService.deleteBoard(boardnum);
+		}
+		return "redirect:../list";
+
 	}
 }
