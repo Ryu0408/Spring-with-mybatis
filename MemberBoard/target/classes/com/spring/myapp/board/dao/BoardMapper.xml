@@ -26,4 +26,12 @@
 		WHERE
 	boardnum = #{boardnum}
 </update>
+
+<update id ="hitplus">
+	UPDATE board
+		set
+	hit=hit+1
+		WHERE
+	boardnum=#{boardnum}
+</update>
 </mapper>

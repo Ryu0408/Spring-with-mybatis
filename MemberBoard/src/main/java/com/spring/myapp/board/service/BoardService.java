@@ -27,6 +27,7 @@ public class BoardService implements IBoardService {
 
 	@Override
 	public BoardVO getBoardContent(int boardnum) {
+		boardDAO.hitplus(boardnum);
 		return boardDAO.getBoardContent(boardnum);
 	}
 
