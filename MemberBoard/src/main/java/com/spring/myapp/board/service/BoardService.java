@@ -35,6 +35,12 @@ public class BoardService implements IBoardService {
 		boardDAO.deleteBoard(boardnum);
 
 	}
+
+	@Override
+	public void updateBoard(BoardVO board) {
+		boardDAO.updateBoard(board);
+		
+	}
 	
 	
 }

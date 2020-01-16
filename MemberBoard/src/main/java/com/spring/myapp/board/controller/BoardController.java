@@ -78,6 +78,34 @@ public class BoardController {
 			boardService.deleteBoard(boardnum);
 		}
 		return "redirect:../list";
-
 	}
+	
+	@RequestMapping(value="/board/update/{boardnum}", method = RequestMethod.GET)
+	public String updateContent(@PathVariable int boardnum, HttpSession session, Model model) {
+		if(session.getAttribute("id")==null) {
+			return "redirect:../";
+		}
+		BoardVO board = boardService.getBoardContent(boardnum);
+		String uname = (String)session.getAttribute("name");
+		if(!uname.equals(board.getName())) {
+			return "redirect:../";
+		}
+		model.addAttribute("board",board);
+		return "board/board_update";
+	}
+	
+	@RequestMapping(value="/board/update/", method = RequestMethod.POST)
+	public String updateContent(BoardVO board, 
+			HttpSession session, Model model) {
+		if(session.getAttribute("id")==null) {
+			return "redirect:../";
+		}
+		String uname = (String)session.getAttribute("name");
+		if(!uname.equals(board.getName())) {
+			return "redirect:../";
+		}
+		boardService.updateBoard(board);
+		return "redirect:../list";
+	}
+	
 }

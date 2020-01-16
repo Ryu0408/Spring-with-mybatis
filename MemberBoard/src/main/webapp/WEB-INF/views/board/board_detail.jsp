@@ -34,6 +34,7 @@
 			<td colspan = "4">
 				<a href = "../list">[목록으로]</a>
 				<a href = "../delete/${detail.boardnum }">[삭제하기]</a>
+				<a href = "../update/${detail.boardnum }">[수정하기]</a>
 			</td>
 		</tr>
 	</table>
