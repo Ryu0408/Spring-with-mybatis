@@ -8,7 +8,7 @@
 </insert>
 
 <select id="getBoardList"  resultType="com.spring.myapp.board.vo.BoardVO">
-	SELECT * FROM board
+	SELECT * FROM board ORDER BY boardnum DESC
 </select>
 
 </mapper>
