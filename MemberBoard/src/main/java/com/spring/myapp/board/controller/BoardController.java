@@ -1,5 +1,7 @@
 package com.spring.myapp.board.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.myapp.board.service.IBoardService;
+import com.spring.myapp.board.vo.BoardVO;
 
 @Controller
 public class BoardController {
@@ -33,5 +36,15 @@ public class BoardController {
 	public String writeBoard(String name, String title, String content, Model model) {
 		boardService.writeBoard(name, title, content);
 		return "redirect:../";
+	}
+	
+	@RequestMapping(value="board/list", method=RequestMethod.GET)
+	public String showBoard(HttpSession session, Model model) {
+		if(session.getAttribute("id")==null) {
+			return "redirect:../";
+		}
+		List<BoardVO> boards = boardService.getBoardList();
+		model.addAttribute("boards", boards);
+		return "board/board_list";
 	}
 }

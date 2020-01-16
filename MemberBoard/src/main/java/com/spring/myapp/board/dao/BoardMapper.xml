@@ -6,4 +6,9 @@
 	INSERT INTO board 
 	values(autonum.NEXTVAL, #{name}, #{title}, #{content}, SYSDATE, 0)
 </insert>
+
+<select id="getBoardList"  resultType="com.spring.myapp.board.vo.BoardVO">
+	SELECT * FROM board
+</select>
+
 </mapper>
